@@ -8,7 +8,7 @@
 Summary:	User Feedback
 Name:		kf6-%{kfname}
 Version:	6.17.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -54,7 +54,8 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 %cmake -B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DENABLE_PHP=OFF
 
 %ninja_build -C build
 
