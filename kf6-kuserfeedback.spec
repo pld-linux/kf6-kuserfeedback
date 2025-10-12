@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.18
+%define		kdeframever	6.19
 %define		qtver		5.15.2
 %define		kfname		kuserfeedback
 
 Summary:	User Feedback
 Name:		kf6-%{kfname}
-Version:	6.18.0
+Version:	6.19.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	3ad4d658ec0ca80ee075446dfbc2edbd
+# Source0-md5:	d9edeface43e7fae3f2affb6e5e3da45
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Qml-devel >= %{qtver}
@@ -81,13 +81,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md
 %ghost %{_libdir}/libKF6UserFeedbackCore.so.6
-%attr(755,root,root) %{_libdir}/libKF6UserFeedbackCore.so.*.*
+%{_libdir}/libKF6UserFeedbackCore.so.*.*
 %ghost %{_libdir}/libKF6UserFeedbackWidgets.so.6
-%attr(755,root,root) %{_libdir}/libKF6UserFeedbackWidgets.so.*.*
+%{_libdir}/libKF6UserFeedbackWidgets.so.*.*
 %dir %{_libdir}/qt6/qml/org/kde/userfeedback
 %{_libdir}/qt6/qml/org/kde/userfeedback/KF6UserFeedbackQml.qmltypes
 %{_libdir}/qt6/qml/org/kde/userfeedback/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/userfeedback/libKF6UserFeedbackQml.so
+%{_libdir}/qt6/qml/org/kde/userfeedback/libKF6UserFeedbackQml.so
 %{_libdir}/qt6/qml/org/kde/userfeedback/qmldir
 %{_datadir}/qlogging-categories6/org_kde_UserFeedback.categories
 
